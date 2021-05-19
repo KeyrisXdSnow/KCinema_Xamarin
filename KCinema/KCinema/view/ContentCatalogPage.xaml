@@ -2,8 +2,11 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="KCinema.view.ContentCatalogPage">
-    
+             xmlns:generic="clr-namespace:System.Collections.Generic;assembly=netstandard"
+             xmlns:model="clr-namespace:KCinema.model;assembly=KCinema"
+             x:Class="KCinema.view.ContentCatalogPage"
+             x:Name="ContentEntityCatalog">
+
     <ContentPage.ToolbarItems>
         <ToolbarItem
             Text="Settings"
@@ -21,12 +24,58 @@
             Clicked="OnSignOut"
             Priority="0" />
     </ContentPage.ToolbarItems>
-    
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Hello, world!"
-                   VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+
+    <ListView x:Name="ContentListView"
+              CachingStrategy="RecycleElement"
+              HasUnevenRows="True"
+              SelectionMode="None"
+              SeparatorVisibility="None"
+              HorizontalOptions="StartAndExpand"
+              IsVisible="True"
+              ItemsSource="{Binding Source={x:Reference ContentEntityCatalog},
+              Path=BindingContext.ContentCatalog}"
+              ItemTapped="OnItemTapped">
+
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <ViewCell.View>
+                        <Frame
+                            HasShadow="true"
+                            Margin="8, 5, 8, 5"
+                            BackgroundColor="{DynamicResource AppFrameColor}"
+                            CornerRadius="10">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="45.0*" />
+                                    <ColumnDefinition Width="55.0*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="150" />
+                                </Grid.RowDefinitions>
+
+                                <StackLayout
+                                    Margin="8, 0, 0, 0"
+                                    Orientation="Vertical"
+                                    HorizontalOptions="StartAndExpand"
+                                    Grid.Column="1">
+
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Margin="0, 0, 0, 0"
+                                               TextColor="{DynamicResource AppTextColor}"
+                                               FontSize="{DynamicResource AppFontSize}"
+                                               MaxLines="1"
+                                               LineBreakMode="TailTruncation"
+                                               Text="{Binding Name}" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </Grid>
+                        </Frame>
+                    </ViewCell.View>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+
+    </ListView>
 </ContentPage>

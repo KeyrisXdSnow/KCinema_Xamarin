@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KCinema.view.SettingsPage">
+<ContentPage.Content>
+        <StackLayout
+            Orientation="Vertical"
+            Margin="0, 8, 0, 0">
+            <Frame
+                HasShadow="true"
+                BackgroundColor="{DynamicResource AppFrameColor}"
+                Margin="8, 5, 8, 5"
+                VerticalOptions="Start"
+                CornerRadius="10">
+                <StackLayout Orientation="Horizontal" Margin="3, 3, 3, 3">
+                    <Label x:Name="DarkThemeLabel"
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource AppFontSize}"
+                           TextColor="{DynamicResource AppTextColor}"
+                           FontFamily="Times New Roman"
+                           Text="Dark Theme" />
+                    <Switch x:Name="AppThemeSwitch"
+                            Toggled="OnSwitchLigthTheme"
+                            HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+            </Frame>
+            <Frame
+                HasShadow="true"
+                BackgroundColor="{DynamicResource AppFrameColor}"
+                Margin="8, 5, 8, 5"
+                VerticalOptions="Start"
+                CornerRadius="10">
+                <StackLayout Orientation="Horizontal" Margin="3, 3, 3, 3">
+                    <Label x:Name="ActiveLocaleLabel"
+                           FontAttributes="Bold"
+                           FontSize="{DynamicResource AppFontSize}"
+                           TextColor="{DynamicResource AppTextColor}"
+                           Text="Switch Language" />
+                    <Switch x:Name="ActiveLocaleSwitch"
+                            Toggled="OnSwitchLanguage"
+                            HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+            </Frame>
+            <Frame
+                HasShadow="true"
+                BackgroundColor="{DynamicResource AppFrameColor}"
+                Margin="8, 5, 8, 5"
+                CornerRadius="10">
+                <StackLayout>
+                    <Label x:Name="TextSizeLabel"
+                           FontAttributes="Bold"
+                           TextColor="{DynamicResource AppTextColor}"
+                           FontSize="{DynamicResource AppFontSize}"
+                           Text="TextSize" />
+                    <Slider x:Name="TextSizeSlider"
+                            MinimumTrackColor="DarkSlateGray"
+                            MaximumTrackColor="#001100"
+                            ThumbColor="Gray"
+                            Margin="0, 3, 0, 3"
+                            Maximum="10"
+                            ValueChanged="OnFontSizeChange" />
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,10 +1,13 @@
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace KCinema.model
 {
     public class Content
     {
-        public string? Id { get; set; }
+        
+        public string Id { get; set; }
+        
         public string Name { get; set; }
         public ContentType Type { get; set; }
         
@@ -25,7 +28,7 @@ namespace KCinema.model
         {
         }
 
-        public Content(string? id, string name, ContentType type, string genres, float rating, string country, int watchTime, string releaseDate, string posterUrl, string trailerUrl, string description, List<string> gallery)
+        public Content(string id, string name, ContentType type, string genres, float rating, string country, int watchTime, string releaseDate, string posterUrl, string trailerUrl, string description, List<string> gallery)
         {
             Id = id;
             Name = name;
@@ -40,7 +43,16 @@ namespace KCinema.model
             Description = description;
             Gallery = gallery;
         }
+
+        public Content(string name, ContentType type)
+        {
+            Name = name;
+            Type = type;
+        }
     }
+    
+    
+    
     
     public enum ContentType
     {

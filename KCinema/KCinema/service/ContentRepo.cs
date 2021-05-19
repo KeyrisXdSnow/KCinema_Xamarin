@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,32 +12,32 @@ namespace KCinema.service
 {
     public class ContentRepo : IContentRepo
     {
-        
         private readonly FirebaseClient _firebaseClient
             = new FirebaseClient(FirebaseConfig.FirebaseUrl);
-        
+
         public async Task<List<Content>> GetAllContent()
         {
-            return (await _firebaseClient
-                    .Child(FirebaseConfig.FirebaseUrl)
-                    .OnceAsync<Content>())
-                .Select(item =>
-                    new Content
-                    {
-                        Name = item.Object.Name,
-                        Type = item.Object.Type,
-                        Genres = item.Object. Genres,
-                        Rating = item.Object.Rating,
-                        Country = item.Object.Country,
-                        WatchTime = item.Object.WatchTime,
-                        ReleaseDate = item.Object.ReleaseDate,
-                        PosterUrl = item.Object.PosterUrl,
-                        TrailerUrl = item.Object.TrailerUrl,
-                        Description = item.Object.Description,
-                        Gallery = item.Object.Gallery,
-                        Id = item.Key
-                    }
-                ).ToList();
+           return (await _firebaseClient.Child(FirebaseConfig.Root).OnceAsync<Content>()).Select(item =>
+                {
+                    ContentType type; 
+                    Enum.TryParse("Active", out  type);
+
+                    return new Content(
+                        id: item.Key,
+                        name: item.Object.Name,
+                        type: type,
+                        genres: item.Object.Genres,
+                        rating: item.Object.Rating,
+                        country: item.Object.Country,
+                        watchTime: item.Object.WatchTime,
+                        releaseDate: item.Object.ReleaseDate,
+                        posterUrl: item.Object.PosterUrl,
+                        trailerUrl: item.Object.TrailerUrl,
+                        description: item.Object.Description,
+                        gallery: item.Object.Gallery
+                    );
+                }
+            ).ToList();
         }
 
         public async Task DeleteContent(Content content)
@@ -49,9 +50,9 @@ namespace KCinema.service
 
         public async Task UpdateContent(Content content)
         {
-            await _firebaseClient  
-                .Child(FirebaseConfig.Root)  
-                .Child(content.Id)  
+            await _firebaseClient
+                .Child(FirebaseConfig.Root)
+                .Child(content.Id)
                 .PutAsync(content);
         }
 

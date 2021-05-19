@@ -19,10 +19,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="utils" />
-    </ItemGroup>
-
-    <ItemGroup>
       <Compile Update="view\App.xaml.cs">
         <DependentUpon>App.xaml</DependentUpon>
         <SubType>Code</SubType>

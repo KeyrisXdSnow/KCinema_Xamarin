@@ -32,7 +32,7 @@ namespace KCinema.view
             var token = await _firebaseAuthentication.SignUpWithEmailAndPassword(UserEmail.Text, UserPassword.Text);
             if (!token.Equals(string.Empty))
             {
-                await Navigation.PushAsync(new CatalogPage());
+                await Navigation.PushAsync(new ContentCatalogPage());
             }
         }
 

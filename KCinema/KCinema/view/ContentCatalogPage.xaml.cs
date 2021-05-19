@@ -1,27 +1,44 @@
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using KCinema.model;
 using KCinema.repo;
+using KCinema.service;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace KCinema.view
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ContentCatalogPage : ContentPage
+    public partial class ContentCatalogPage
     {
         private ObservableCollection<Content> ContentCatalog { get; set; }
+        
+        
+        
         private readonly IFirebaseAuthentication _firebaseAuthentication;
         public ContentCatalogPage()
         {
             InitializeComponent();
             BindingContext = this;
-            //ContentList.ItemsSource = ContentCatalog;
             _firebaseAuthentication = DependencyService.Get<IFirebaseAuthentication>();
+            ContentCatalog = new ObservableCollection<Content>();
+            
+            ContentListView.ItemsSource = ContentCatalog;
+        }
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            await LoadContent();
+
+        }
+
+        private async Task LoadContent()
+        {
+            foreach (var content in await new ContentRepo().GetAllContent())
+            {
+                ContentCatalog.Add(content);
+            }
         }
 
         private async void OnSignOut(object sender, EventArgs e)
@@ -32,14 +49,19 @@ namespace KCinema.view
             }
         }
 
-        private void OnSettingsClicked(object sender, EventArgs e)
+        private async void OnSettingsClicked(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+             await Navigation.PushAsync(new SettingsPage());
         }
 
-        private void OnAddContent(object sender, EventArgs e)
+        private async void OnAddContent(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            await Navigation.PushAsync(new ContentRedactor(true),true);
+        }
+
+        private async void OnItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            await Navigation.PushAsync(new ContentEntityPage(ContentCatalog[e.ItemIndex]));
         }
     }
 }

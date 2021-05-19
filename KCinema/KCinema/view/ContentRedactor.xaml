@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KCinema.view.ContentRedactor">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry  Placeholder = "Content Name"
+                    x:Name="Name"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand" />
+            
+            
+            <Entry  Placeholder = "Genres"
+                    x:Name="Genres"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand" />
+            
+            
+            <Entry  Placeholder = "Country"
+                    x:Name="Country"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand" />
+            <Entry  Placeholder = "WatchTime"
+                    x:Name="WatchTime"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand" />
+            <Entry  Placeholder = "ReleaseDate"
+                    x:Name="ReleaseDate"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand" />
+            
+            <Entry  Placeholder = "Poster Url"
+                    x:Name="Poster"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand" />
+            <Entry  Placeholder = "Trailer Url"
+                    x:Name="Trailer"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand" />
+            
+            <Entry  Placeholder = "Description"
+                    x:Name="Description"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand" />
+            
+            
+            <Editor Placeholder = "Gallery URLS (Format: url, url ...)"
+                    x:Name="Gallery"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand" />
+            
+            <Button BackgroundColor="Black" Clicked="OnFinish" TextColor="White" Text="Login"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
