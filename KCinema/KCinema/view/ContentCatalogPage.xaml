@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KCinema.view.ContentCatalogPage">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Text="Settings"
+            Order="Primary"
+            Clicked="OnSettingsClicked"
+            Priority="0" />
+        <ToolbarItem
+            Text="Add"
+            Order="Primary"
+            Clicked="OnAddContent"
+            Priority="0" />
+        <ToolbarItem
+            Text="LogOut"
+            Order="Primary"
+            Clicked="OnSignOut"
+            Priority="0" />
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Hello, world!"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
