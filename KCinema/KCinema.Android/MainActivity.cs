@@ -3,6 +3,7 @@ using Android.App;
 using Android.Content.PM;
 using Android.OS;
 using Firebase;
+using KCinema.view;
 
 namespace KCinema.Android
 {
@@ -20,6 +21,7 @@ namespace KCinema.Android
             base.OnCreate(savedInstanceState);
             
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            Xamarin.FormsGoogleMaps.Init(this, savedInstanceState);
             LoadApplication(new App());
             
             FirebaseApp.InitializeApp(Application.Context);

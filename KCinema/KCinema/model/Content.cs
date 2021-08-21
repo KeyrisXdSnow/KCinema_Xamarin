@@ -61,5 +61,6 @@ namespace KCinema.model
         Cartoon,
         AnimatedSeries,
         Anime
+   
     }
 }

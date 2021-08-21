@@ -17,27 +17,23 @@ namespace KCinema.service
 
         public async Task<List<Content>> GetAllContent()
         {
-           return (await _firebaseClient.Child(FirebaseConfig.Root).OnceAsync<Content>()).Select(item =>
-                {
-                    ContentType type; 
-                    Enum.TryParse("Active", out  type);
-
-                    return new Content(
-                        id: item.Key,
-                        name: item.Object.Name,
-                        type: type,
-                        genres: item.Object.Genres,
-                        rating: item.Object.Rating,
-                        country: item.Object.Country,
-                        watchTime: item.Object.WatchTime,
-                        releaseDate: item.Object.ReleaseDate,
-                        posterUrl: item.Object.PosterUrl,
-                        trailerUrl: item.Object.TrailerUrl,
-                        description: item.Object.Description,
-                        gallery: item.Object.Gallery
-                    );
-                }
-            ).ToList();
+            return (await _firebaseClient.Child(FirebaseConfig.Root).OnceAsync<Content>()).Select(item =>
+            {
+                return new Content(
+                    id: item.Key,
+                    name: item.Object.Name,
+                    type: item.Object.Type,
+                    genres: item.Object.Genres,
+                    rating: item.Object.Rating,
+                    country: item.Object.Country,
+                    watchTime: item.Object.WatchTime,
+                    releaseDate: item.Object.ReleaseDate,
+                    posterUrl: item.Object.PosterUrl,
+                    trailerUrl: item.Object.TrailerUrl,
+                    description: item.Object.Description,
+                    gallery: item.Object.Gallery
+                );
+            }).ToList();
         }
 
         public async Task DeleteContent(Content content)

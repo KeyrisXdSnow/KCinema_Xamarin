@@ -3,14 +3,29 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:KCinema"
+             xmlns:extensions="http://xamarin.com/schemas/2020/toolkit"
              x:Class="KCinema.view.MainPage">
 
     <StackLayout Margin="20" VerticalOptions="CenterAndExpand" Spacing="20" Orientation="Vertical">
-        <Entry Placeholder="email"  x:Name="UserEmail"  Text="keyris.xd.snow@gmail.com"></Entry>
-        <Entry Placeholder="password"  x:Name="UserPassword" Text="111111"></Entry>
-
-        <Button BackgroundColor="Black" Clicked="loginButton_Clicked" TextColor="White" Text="Login" x:Name="loginbutton"/>
-        <Button BackgroundColor="Black" TextColor="White" Text="Signup" Clicked="signUpButton_Clicked" x:Name="signupbutton"/>
+        <Entry 
+            Placeholder="{extensions:Translate emailPlaceHolder}" 
+            x:Name="UserEmail" 
+            Text="keyris.xd.snow@gmail.com" 
+            FontFamily="{DynamicResource Key=FontFamily}"
+            FontSize="{DynamicResource Key=FontSize}"/>
+        <Entry Placeholder="{extensions:Translate passwordPlaceHolder}" 
+               x:Name="UserPassword" 
+               Text="111111"
+               FontFamily="{DynamicResource Key=FontFamily}"
+               FontSize="{DynamicResource Key=FontSize}"/>
+        <Button BackgroundColor="Black" Clicked="loginButton_Clicked" TextColor="White"
+                Text="{extensions:Translate SignIn}"
+                FontFamily="{DynamicResource Key=FontFamily}"
+                FontSize="{DynamicResource Key=FontSize}"/>
+        <Button BackgroundColor="Black" TextColor="White"
+                Text="{extensions:Translate SignUp}" Clicked="signUpButton_Clicked"
+                FontSize="{DynamicResource Key=FontSize}"
+                FontFamily="{DynamicResource Key=FontFamily}"/>
 
     </StackLayout>
 

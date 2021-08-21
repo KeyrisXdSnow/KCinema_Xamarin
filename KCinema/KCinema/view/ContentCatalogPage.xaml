@@ -2,80 +2,123 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:generic="clr-namespace:System.Collections.Generic;assembly=netstandard"
              xmlns:model="clr-namespace:KCinema.model;assembly=KCinema"
+             xmlns:extensions="http://xamarin.com/schemas/2020/toolkit"
              x:Class="KCinema.view.ContentCatalogPage"
-             x:Name="ContentEntityCatalog">
+             x:Name="ContentEntityCatalog"
+             BackgroundColor="{ DynamicResource BackgroundColor}">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem
-            Text="Settings"
+            Text="{extensions:Translate Map}"
+            Order="Primary"
+            Clicked="OnMap"
+            Priority="0" />
+        <ToolbarItem
+            Text="{extensions:Translate Settings}"
             Order="Primary"
             Clicked="OnSettingsClicked"
             Priority="0" />
         <ToolbarItem
-            Text="Add"
+            Text="{extensions:Translate Add}"
             Order="Primary"
             Clicked="OnAddContent"
             Priority="0" />
         <ToolbarItem
-            Text="LogOut"
+            Text="{extensions:Translate LogOut}"
             Order="Primary"
             Clicked="OnSignOut"
             Priority="0" />
     </ContentPage.ToolbarItems>
 
-    <ListView x:Name="ContentListView"
-              CachingStrategy="RecycleElement"
-              HasUnevenRows="True"
-              SelectionMode="None"
-              SeparatorVisibility="None"
-              HorizontalOptions="StartAndExpand"
-              IsVisible="True"
-              ItemsSource="{Binding Source={x:Reference ContentEntityCatalog},
-              Path=BindingContext.ContentCatalog}"
-              ItemTapped="OnItemTapped">
+    <StackLayout>
 
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <ViewCell.View>
+        <StackLayout Margin="120,0,120,0">
+            <Picker x:Name="ContentTypePicker"
+                    HorizontalTextAlignment="Center"
+                    SelectedIndexChanged="ContentType_OnSelectedIndexChanged"
+                    TextColor="{DynamicResource TopBarColor}"
+                    FontSize="{DynamicResource Key=FontSize}"
+                    TitleColor="{DynamicResource TopBarColor}"
+                    FontFamily="{DynamicResource Key=FontFamily}"
+                    FontAttributes="Bold">
+                <Picker.Items>
+                    <x:String>All</x:String>
+                    <x:String>Film</x:String>
+                    <x:String>Series</x:String>
+                    <x:String>Cartoon</x:String>
+                    <x:String>AnimatedSeries</x:String>
+                    <x:String>Anime</x:String>
+                </Picker.Items>
+            </Picker>
+        </StackLayout>
+        <CollectionView x:Name="ContentListView"
+                        ItemsSource="{Binding Source={x:Reference ContentEntityCatalog},
+                    Path=BindingContext.ContentCatalog}"
+                        IsVisible="True">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="2" />
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"
+                                                  NumberOfTapsRequired="1"
+                                                  CommandParameter="{Binding .}" />
+                        </Grid.GestureRecognizers>
+
                         <Frame
+                            Margin="5,5,5,5"
                             HasShadow="true"
-                            Margin="8, 5, 8, 5"
-                            BackgroundColor="{DynamicResource AppFrameColor}"
-                            CornerRadius="10">
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="45.0*" />
-                                    <ColumnDefinition Width="55.0*" />
-                                </Grid.ColumnDefinitions>
+                            BackgroundColor="{DynamicResource FrameColor}"
+                            CornerRadius="5">
 
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="150" />
-                                </Grid.RowDefinitions>
+                            <StackLayout
+                                Orientation="Vertical">
+
+                                <Image
+                                    HeightRequest="250"
+                                    Aspect="AspectFill">
+
+                                    <Image.Source>
+                                        <Binding Path="PosterUrl">
+                                            <Binding.TargetNullValue>
+                                                <ImageSource>"https://comps.canstockphoto.com/404-error-image_csp39898673.jpg"</ImageSource>
+                                            </Binding.TargetNullValue>
+                                        </Binding>
+                                    </Image.Source>
+                                </Image>
 
                                 <StackLayout
-                                    Margin="8, 0, 0, 0"
-                                    Orientation="Vertical"
-                                    HorizontalOptions="StartAndExpand"
-                                    Grid.Column="1">
-
-                                    <StackLayout Orientation="Horizontal">
-                                        <Label Margin="0, 0, 0, 0"
-                                               TextColor="{DynamicResource AppTextColor}"
-                                               FontSize="{DynamicResource AppFontSize}"
-                                               MaxLines="1"
-                                               LineBreakMode="TailTruncation"
-                                               Text="{Binding Name}" />
-                                    </StackLayout>
+                                    HorizontalOptions="Fill"
+                                    VerticalOptions="Start"
+                                    BackgroundColor="{DynamicResource PosterInfo}">
+                                    <Label Margin="0, 0, 0, 0"
+                                           TextColor="{DynamicResource PosterInfoText}"
+                                           FontSize="{DynamicResource Key=FontSize}"
+                                           FontFamily="{DynamicResource Key=FontFamily}"
+                                           FontAttributes="Bold"
+                                           MaxLines="1"
+                                           LineBreakMode="TailTruncation"
+                                           Text="{Binding Name}"
+                                           HorizontalTextAlignment="Center"/>
+                                    <Label Margin="0, 0, 0, 0"
+                                           TextColor="{DynamicResource PosterInfoText}"
+                                           FontSize="{DynamicResource Key=FontSize}"
+                                           FontFamily="{DynamicResource Key=FontFamily}"
+                                           MaxLines="1"
+                                           LineBreakMode="TailTruncation"
+                                           Text="{Binding Genres}"
+                                           HorizontalTextAlignment="Center"/>
                                 </StackLayout>
-                            </Grid>
+                            </StackLayout>
                         </Frame>
-                    </ViewCell.View>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
 
-    </ListView>
+    </StackLayout>
 </ContentPage>

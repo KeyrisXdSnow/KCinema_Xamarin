@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Foundation;
+using KCinema.view;
 using UIKit;
 
 namespace KCinema.iOS

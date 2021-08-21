@@ -13,9 +13,14 @@
     <ItemGroup>
         <PackageReference Include="FirebaseAuthentication.net" Version="4.0.0-alpha.2" />
         <PackageReference Include="FirebaseDatabase.net" Version="4.0.6" />
+        <PackageReference Include="FirebaseStorage.net" Version="1.0.3" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+        <PackageReference Include="Xamarin.CommunityToolkit" Version="1.2.0-pre2" />
+        <PackageReference Include="Xamarin.CommunityToolkit.Markup" Version="1.2.0-pre2" />
         <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
         <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+        <PackageReference Include="Xamarin.Forms.GoogleMaps" Version="4.0.0-BETA1" />
+        <PackageReference Include="YoutubeExplode" Version="6.0.0" />
     </ItemGroup>
 
     <ItemGroup>
@@ -27,5 +32,34 @@
         <DependentUpon>MainPage.xaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
+      <Compile Update="resource\localization\AppLang.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>AppLang.resx</DependentUpon>
+      </Compile>
+      <Compile Update="resource\localization\AppLang.ru.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>AppLang.ru.resx</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Update="resource\localization\AppLang.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>AppLang.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="resource\localization\AppLang.ru.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>AppLang.ru.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <None Remove="resource\Fonts\OpenSans-Regular.ttf" />
+      <EmbeddedResource Include="resource\Fonts\OpenSans-Regular.ttf">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <None Remove="resource\Fonts\Stick-Regular.ttf" />
+      <EmbeddedResource Include="resource\Fonts\Stick-Regular.ttf">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
     </ItemGroup>
 </Project>

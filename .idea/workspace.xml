@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="55c69d90-19c2-4403-87e8-12d5e5a9b99c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/KCinema.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KCinema/KCinema/config/MapsConfig.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KCinema/KCinema/resource/DarkTheme.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KCinema/KCinema/resource/DarkTheme.xaml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KCinema/KCinema/resource/Fonts/OpenSans-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KCinema/KCinema/resource/Fonts/Stick-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KCinema/KCinema/resource/LightTheme.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KCinema/KCinema/resource/LightTheme.xaml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KCinema/KCinema/resource/localization/AppLang.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KCinema/KCinema/resource/localization/AppLang.resx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KCinema/KCinema/resource/localization/AppLang.ru.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KCinema/KCinema/resource/localization/AppLang.ru.resx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KCinema/KCinema/service/MapService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KCinema/KCinema/service/SettingsService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KCinema/KCinema/utils/FontsHelper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KCinema/KCinema/view/MapPage.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KCinema/KCinema/view/MapPage.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/KCinema/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/KCinema/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KCinema.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/KCinema.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KCinema/KCinema.Android/KCinema.Android.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/KCinema/KCinema.Android/KCinema.Android.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KCinema/KCinema.Android/KCinema.Android.csproj.user" beforeDir="false" afterPath="$PROJECT_DIR$/KCinema/KCinema.Android/KCinema.Android.csproj.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KCinema/KCinema.Android/MainActivity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/KCinema/KCinema.Android/MainActivity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KCinema/KCinema.Android/Properties/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/KCinema/KCinema.Android/Properties/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KCinema/KCinema.Android/Resources/Resource.designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/KCinema/KCinema.Android/Resources/Resource.designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KCinema/KCinema.iOS/AppDelegate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/KCinema/KCinema.iOS/AppDelegate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KCinema/KCinema.iOS/KCinema.iOS.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/KCinema/KCinema.iOS/KCinema.iOS.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KCinema/KCinema/KCinema.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/KCinema/KCinema/KCinema.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KCinema/KCinema/model/Content.cs" beforeDir="false" afterPath="$PROJECT_DIR$/KCinema/KCinema/model/Content.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KCinema/KCinema/service/ContentRepo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/KCinema/KCinema/service/ContentRepo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KCinema/KCinema/utils/AppSettingsUtils.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KCinema/KCinema/view/App.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/KCinema/KCinema/view/App.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KCinema/KCinema/view/App.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/KCinema/KCinema/view/App.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KCinema/KCinema/view/ContentCatalogPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/KCinema/KCinema/view/ContentCatalogPage.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KCinema/KCinema/view/ContentCatalogPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/KCinema/KCinema/view/ContentCatalogPage.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KCinema/KCinema/view/ContentEntityPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/KCinema/KCinema/view/ContentEntityPage.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KCinema/KCinema/view/ContentEntityPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/KCinema/KCinema/view/ContentEntityPage.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KCinema/KCinema/view/ContentRedactor.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/KCinema/KCinema/view/ContentRedactor.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KCinema/KCinema/view/ContentRedactor.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/KCinema/KCinema/view/ContentRedactor.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KCinema/KCinema/view/MainPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/KCinema/KCinema/view/MainPage.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KCinema/KCinema/view/MainPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/KCinema/KCinema/view/MainPage.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KCinema/KCinema/view/SettingsPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/KCinema/KCinema/view/SettingsPage.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KCinema/KCinema/view/SettingsPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/KCinema/KCinema/view/SettingsPage.xaml.cs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1svzrf6xw2naD4E9CbE2o7XuQ9h" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="55c69d90-19c2-4403-87e8-12d5e5a9b99c" name="Default Changelist" comment="" />
+      <created>1621768050968</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1621768050968</updated>
+      <workItem from="1629579373515" duration="54000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ResourceDictionary  xmlns="http://xamarin.com/schemas/2014/forms"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                     x:Class="KCinema.resource.LightTheme">
+    
+    <Color x:Key="BackgroundColor">#F2EEF</Color>    
+    <Color x:Key="FrameColor">#eceff1</Color>    
+    <Color x:Key="BorderImageColor">#1e1e1e</Color>
+    <Color x:Key="TextPrimaryColor">#030303</Color>  
+    <Color x:Key="TextHolderPrimaryColor">#8c8b87</Color>  
+    
+    <Color x:Key="TextSecondaryColor">#eFeFeF</Color>   
+    <Color x:Key="TopBarColor">#d6424a</Color>   
+    
+    
+    <Color x:Key="PosterInfo">#C3000000</Color> 
+    <Color x:Key="PosterInfoText">White</Color>
+    
+    <Style x:Key="Title" TargetType="Label">    
+        <Setter Property="TextColor" Value="{StaticResource TextPrimaryColor}"/>    
+        <Setter Property="FontAttributes" Value="Bold"/>    
+        <Setter Property="FontSize" Value="Large"/>    
+    </Style> 
+</ResourceDictionary>

@@ -2,55 +2,131 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="KCinema.view.ContentRedactor">
+             xmlns:extensions="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="KCinema.view.ContentRedactor"
+             BackgroundColor="{ DynamicResource BackgroundColor}">
     <ContentPage.Content>
-        <StackLayout>
-            <Entry  Placeholder = "Content Name"
-                    x:Name="Name"
-                    VerticalOptions="CenterAndExpand"
-                    HorizontalOptions="CenterAndExpand" />
-            
-            
-            <Entry  Placeholder = "Genres"
-                    x:Name="Genres"
-                    VerticalOptions="CenterAndExpand"
-                    HorizontalOptions="CenterAndExpand" />
-            
-            
-            <Entry  Placeholder = "Country"
-                    x:Name="Country"
-                    VerticalOptions="CenterAndExpand"
-                    HorizontalOptions="CenterAndExpand" />
-            <Entry  Placeholder = "WatchTime"
-                    x:Name="WatchTime"
-                    VerticalOptions="CenterAndExpand"
-                    HorizontalOptions="CenterAndExpand" />
-            <Entry  Placeholder = "ReleaseDate"
-                    x:Name="ReleaseDate"
-                    VerticalOptions="CenterAndExpand"
-                    HorizontalOptions="CenterAndExpand" />
-            
-            <Entry  Placeholder = "Poster Url"
-                    x:Name="Poster"
-                    VerticalOptions="CenterAndExpand"
-                    HorizontalOptions="CenterAndExpand" />
-            <Entry  Placeholder = "Trailer Url"
-                    x:Name="Trailer"
-                    VerticalOptions="CenterAndExpand"
-                    HorizontalOptions="CenterAndExpand" />
-            
-            <Entry  Placeholder = "Description"
-                    x:Name="Description"
-                    VerticalOptions="CenterAndExpand"
-                    HorizontalOptions="CenterAndExpand" />
-            
-            
-            <Editor Placeholder = "Gallery URLS (Format: url, url ...)"
-                    x:Name="Gallery"
-                    VerticalOptions="CenterAndExpand"
-                    HorizontalOptions="CenterAndExpand" />
-            
-            <Button BackgroundColor="Black" Clicked="OnFinish" TextColor="White" Text="Login"/>
-        </StackLayout>
+
+        <ScrollView>
+            <StackLayout
+                Margin="20,10,20,10">
+                <Entry Placeholder="{extensions:Translate cname}"
+                       x:Name="Name"
+                       VerticalOptions="Fill"
+                       HorizontalOptions="Fill"
+                       PlaceholderColor="{ DynamicResource TextHolderPrimaryColor}"
+                       TextColor="{ DynamicResource TextPrimaryColor}"
+                       FontFamily="{DynamicResource Key=FontFamily}"
+                       FontSize="{DynamicResource Key=FontSize}" />
+                
+                <StackLayout Margin="100,0,100,0">
+                       <Picker x:Name="ContentTypePicker"
+                               HorizontalTextAlignment="Center"
+                               SelectedIndexChanged="ContentType_OnSelectedIndexChanged"
+                               TextColor="{DynamicResource TopBarColor}"
+                               FontSize="{DynamicResource Key=FontSize}"
+                               TitleColor="{DynamicResource TopBarColor}"
+                               FontFamily="{DynamicResource Key=FontFamily}"
+                               FontAttributes="Bold">
+                              <Picker.Items>
+                                     <x:String>Film</x:String>
+                                     <x:String>Series</x:String>
+                                     <x:String>Cartoon</x:String>
+                                     <x:String>AnimatedSeries</x:String>
+                                     <x:String>Anime</x:String>
+                              </Picker.Items>
+                       </Picker>
+                </StackLayout>
+
+                <StackLayout>
+                    <Label x:Name="RatingValue"
+                           FontAttributes="Bold"
+                           Margin="140, 3, 140,0"
+                           TextColor="{ DynamicResource TextPrimaryColor}"
+                           FontSize="{DynamicResource Key=FontSize}"
+                           FontFamily="{DynamicResource Key=FontFamily}"
+                           Text=" " />
+                    <Slider x:Name="Rating"
+                            MinimumTrackColor="{DynamicResource TopBarColor}"
+                            MaximumTrackColor="{DynamicResource TopBarColor}"
+                            ThumbColor="Gray"
+                            Margin="60, 3, 60,0"
+                            Maximum="10"
+                            ValueChanged="OnRatingValueChange" />
+                </StackLayout>
+
+                <Entry Placeholder="{extensions:Translate cgenres}"
+                       x:Name="Genres"
+                       VerticalOptions="Fill"
+                       HorizontalOptions="Fill"
+                       PlaceholderColor="{ DynamicResource TextHolderPrimaryColor}"
+                       TextColor="{ DynamicResource TextPrimaryColor}"
+                       FontFamily="{DynamicResource Key=FontFamily}"
+                       FontSize="{DynamicResource Key=FontSize}" />
+                <Entry Placeholder="{extensions:Translate craiting}"
+                       x:Name="Country"
+                       VerticalOptions="Fill"
+                       HorizontalOptions="Fill"
+                       PlaceholderColor="{ DynamicResource TextHolderPrimaryColor}"
+                       TextColor="{ DynamicResource TextPrimaryColor}"
+                       FontFamily="{DynamicResource Key=FontFamily}"
+                       FontSize="{DynamicResource Key=FontSize}" />
+                <Entry Placeholder="{extensions:Translate cwatchTime}"
+                       x:Name="WatchTime"
+                       VerticalOptions="Fill"
+                       HorizontalOptions="Fill"
+                       PlaceholderColor="{ DynamicResource TextHolderPrimaryColor}"
+                       TextColor="{ DynamicResource TextPrimaryColor}"
+                       FontFamily="{DynamicResource Key=FontFamily}"
+                       FontSize="{DynamicResource Key=FontSize}" />
+                <Entry Placeholder="{extensions:Translate creleaseDate}"
+                       x:Name="ReleaseDate"
+                       VerticalOptions="Fill"
+                       HorizontalOptions="Fill"
+                       PlaceholderColor="{ DynamicResource TextHolderPrimaryColor}"
+                       TextColor="{ DynamicResource TextPrimaryColor}"
+                       FontFamily="{DynamicResource Key=FontFamily}"
+                       FontSize="{DynamicResource Key=FontSize}" />
+                <Entry Placeholder="{extensions:Translate PosterUrl}"
+                       x:Name="Poster"
+                       VerticalOptions="Fill"
+                       HorizontalOptions="Fill"
+                       PlaceholderColor="{ DynamicResource TextHolderPrimaryColor}"
+                       TextColor="{ DynamicResource TextPrimaryColor}"
+                       FontFamily="{DynamicResource Key=FontFamily}"
+                       FontSize="{DynamicResource Key=FontSize}" />
+                <Entry Placeholder="{extensions:Translate TrailerUrl}"
+                       x:Name="Trailer"
+                       VerticalOptions="Fill"
+                       HorizontalOptions="Fill"
+                       PlaceholderColor="{ DynamicResource TextHolderPrimaryColor}"
+                       TextColor="{ DynamicResource TextPrimaryColor}"
+                       FontFamily="{DynamicResource Key=FontFamily}"
+                       FontSize="{DynamicResource Key=FontSize}" />
+                <Entry Placeholder="{extensions:Translate  Description}"
+                       x:Name="Description"
+                       VerticalOptions="Fill"
+                       HorizontalOptions="Fill"
+                       PlaceholderColor="{ DynamicResource TextHolderPrimaryColor}"
+                       TextColor="{ DynamicResource TextPrimaryColor}"
+                       FontFamily="{DynamicResource Key=FontFamily}"
+                       FontSize="{DynamicResource Key=FontSize}" />
+
+                <Editor Placeholder="{extensions:Translate  GalleryUrls}"
+                        x:Name="Gallery"
+                        VerticalOptions="Fill"
+                        PlaceholderColor="{ DynamicResource TextHolderPrimaryColor}"
+                        TextColor="{ DynamicResource TextPrimaryColor}"
+                        FontFamily="{DynamicResource Key=FontFamily}"
+                        FontSize="{DynamicResource Key=FontSize}" />
+
+                <Button BackgroundColor="{DynamicResource TopBarColor}"
+                        Clicked="OnFinish"
+                        TextColor="White" 
+                        Text="{extensions:Translate  Finish}"
+                        FontFamily="{DynamicResource Key=FontFamily}"
+                        FontSize="{DynamicResource Key=FontSize}" />
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
